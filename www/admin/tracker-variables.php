@@ -53,7 +53,7 @@ if (!isset($variables)) {
     }
 }
 
-
+$aErrors = [];
 
 if (!empty($trackerid)) {
     // Get publisher list
@@ -162,6 +162,13 @@ if (!empty($trackerid)) {
         }
     }
 
+    // Check for errors
+    foreach ($variables as $k => $v) {
+        if (!isset($action['del'][$k]) && !preg_match("/^[a-zA-Z_]\\w*\$/", $v['name'])) {
+            $aErrors[$k] = 'Invalid variable name';
+        }
+    }
+
     // insert a new variable
     if (isset($action['new'])) {
         $variables[] = [
@@ -181,7 +188,7 @@ if (!empty($trackerid)) {
 
 
     // has user clicked on save changes?
-    if (isset($action['save'])) {
+    if (isset($action['save']) && [] === $aErrors) {
         OA_Permission::checkSessionToken();
 
         // save variablemethod
@@ -347,6 +354,15 @@ if (isset($trackerid) && $trackerid != '') {
                 echo "<td width='130'><img src='" . OX::assetPath() . "/images/icon-acl.gif' align='absmiddle'>&nbsp;Variable</td>\n";
                 echo "<td>\n";
                 echo "<table border='0' width='100%' cellpadding='0' cellspacing='0'>\n";
+                echo "</tr>\n";
+
+                if (isset($aErrors[$k])) {
+                    echo "<tr><td colspan='2'>";
+                    echo "<div class='errormessage' style='width: 400px;'><img class='errormessage' src='" . OX::assetPath() . "/images/errormessage.gif' align='absmiddle'>&nbsp;";
+                    echo "<span class='tab-r'>" . htmlspecialchars($aErrors[$k]) . "</span></div>";
+                    echo "</td></tr>\n";
+                }
+
                 echo "<tr>\n";
                 echo "<td>" . $strVariableName . "</td>\n";
                 echo "<td><input class='flat' type='text' name='name{$k}' value=\"" . htmlspecialchars($v['name']) . "\"></td>\n";

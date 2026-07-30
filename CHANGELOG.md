@@ -9,6 +9,7 @@ All notable changes to Revive Adserver will be documented in this file.
 - Users with only trafficker permissions could link campaigns belonging to a different agency to their zones ([#1700](https://github.com/revive-adserver/revive-adserver/issues/1700))
 - New `script/console` commands were not verifying the accuracy of the hostname, when provided through the `-H` option ([#1695](https://github.com/revive-adserver/revive-adserver/issues/1695))
 - Added missing escaping in conversion comments when displayed in conversion statistics ([#1708](https://github.com/revive-adserver/revive-adserver/issues/1708))
+- Added proper validation to tracker variable names ([#1707](https://github.com/revive-adserver/revive-adserver/issues/1707))
 
 ## [6.0.8] - 2026-06-25
 
