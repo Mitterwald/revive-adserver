@@ -406,7 +406,7 @@ if (!empty($aConversions)) {
                                     <tr><th scope='row' style='text-align: $phpAds_TextAlignLeft'>{$GLOBALS['strWindowDelay']}:</th><td style='padding-left: 8px'>{$windowDelay}</td></tr>";
             if (!is_null($conversion['comments'])) {
                 echo "
-                                    <tr><th scope='row' style='text-align: $phpAds_TextAlignLeft'>{$GLOBALS['strComments']}:</th><td style='padding-left: 8px'>{$conversion['comments']}</td></tr>";
+                                    <tr><th scope='row' style='text-align: $phpAds_TextAlignLeft'>{$GLOBALS['strComments']}:</th><td style='padding-left: 8px'>" . htmlspecialchars($conversion['comments']) . "</td></tr>";
             }
             echo "
                                 </table>
