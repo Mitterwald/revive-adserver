@@ -11,6 +11,7 @@ All notable changes to Revive Adserver will be documented in this file.
 - Added missing escaping in conversion comments when displayed in conversion statistics ([#1708](https://github.com/revive-adserver/revive-adserver/issues/1708))
 - Added proper validation to tracker variable names ([#1707](https://github.com/revive-adserver/revive-adserver/issues/1707))
 - The *Account Preferences* section was not accessible from the UI due to a permissions error ([#1711](https://github.com/revive-adserver/revive-adserver/issues/1711))
+- Added validation to the language field in user preferences and optimized language loading ([#1710](https://github.com/revive-adserver/revive-adserver/issues/1710))
 
 ## [6.0.8] - 2026-06-25
 
