@@ -10,6 +10,7 @@ All notable changes to Revive Adserver will be documented in this file.
 - New `script/console` commands were not verifying the accuracy of the hostname, when provided through the `-H` option ([#1695](https://github.com/revive-adserver/revive-adserver/issues/1695))
 - Added missing escaping in conversion comments when displayed in conversion statistics ([#1708](https://github.com/revive-adserver/revive-adserver/issues/1708))
 - Added proper validation to tracker variable names ([#1707](https://github.com/revive-adserver/revive-adserver/issues/1707))
+- The *Account Preferences* section was not accessible from the UI due to a permissions error ([#1711](https://github.com/revive-adserver/revive-adserver/issues/1711))
 
 ## [6.0.8] - 2026-06-25
 
